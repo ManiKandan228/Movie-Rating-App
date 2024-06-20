@@ -18,21 +18,24 @@ const movieModel=new mongoose.Schema(
         type:Number,
         required:true,
     },
-    genre:
+    genre1:
     {
         type:String,
         required:true,
         enum : ["Adventure", "Action", "Comedy", "Animation", "Drama", "Horror", "Mystery", "Crime"]
     },
-    thumbnail_image:
-    {
-        data: Buffer,
-        contentType: String
-    },
-    rating:
+    genre2:
     {
         type:String,
         required:true,
+        enum : ["Adventure", "Action", "Comedy", "Animation", "Drama", "Horror", "Mystery", "Crime"]
+    },
+    rating:
+    {
+        type:Number,
+        required:true,
+        min:0,
+        max:10
     },
     synopsis:
     {
