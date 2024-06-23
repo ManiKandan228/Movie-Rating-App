@@ -51,8 +51,8 @@ const updateNewMovie=async(request,response)=>
     const movieToBeUpdated=request.body
     try
     {
-        const updatedMovie=await movieModel.updateMany({id:movieToBeUpdated.id})
-        response.status(200).json(updatedMovie)
+        const updatedMovie=await movieModel.updateOne({id:movieToBeUpdated.id},movieToBeUpdated)
+        response.status(200).json(updateNewMovie)
     }
     catch(error)
     {
@@ -66,7 +66,7 @@ const deleteMovie=async(request,response)=>
     try
     {
         const deletedMovie=await movieModel.deleteOne({id:movieToBeDeleted.id})
-        response.status(200).json(deletedMovie)
+        response.status(200).json(deleteMovie)
     }
     catch(error)
     {

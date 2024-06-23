@@ -22,13 +22,13 @@ const movieModel=new mongoose.Schema(
     {
         type:String,
         required:true,
-        enum : ["Adventure", "Action", "Comedy", "Animation", "Drama", "Horror", "Mystery", "Crime"]
+        enum : ["Adventure", "Action", "Science Fiction", "Animation", "Drama", "Thriller", "Mystery", "Crime","History"]
     },
     genre2:
     {
         type:String,
         required:true,
-        enum : ["Adventure", "Action", "Comedy", "Animation", "Drama", "Horror", "Mystery", "Crime"]
+        enum : ["Adventure", "Action", "Science Fiction", "Animation", "Drama", "Thriller", "Mystery", "Crime","History"]
     },
     rating:
     {
@@ -41,10 +41,15 @@ const movieModel=new mongoose.Schema(
     {
         type:String,
         required:true
+    },
+    image:
+    {
+        type:String,
+        required:true,
     }
 },
     {
-        collection:'movie-details'
+        collection:'movie'
     }
 )
-module.exports=mongoose.model('movie-details',movieModel)
+module.exports=mongoose.model('movie',movieModel)
