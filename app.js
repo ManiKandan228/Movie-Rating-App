@@ -78,4 +78,6 @@ db.once('open',()=>console.log('Connected to db successfully'))
 
 app.use('/api/v1/movies',movieRouter)
 
-app.listen(PORT, console.log(`Server started running on http://localhost:${PORT}/api/v1/movies/`))
+app.listen(PORT, () => {
+  console.log(`Server started running on port ${PORT}`);
+});
